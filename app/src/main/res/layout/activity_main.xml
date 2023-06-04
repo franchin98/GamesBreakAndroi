@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="@string/bienvenido_a"
+        android:textColor="@color/tv_welcome"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_msg_logIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_msg_logIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/inicie_sesi_n"
+        android:textColor="@color/tv_msg_login"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/et_userName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tittle">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_userName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="@string/usuario"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minLines="1"
+        app:layout_constraintBottom_toTopOf="@id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_msg_logIn" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_joystick_new"
+        android:rotation="@integer/material_motion_duration_long_2"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_tittle"
+        app:layout_constraintTop_toBottomOf="@id/tv_tittle"
+        app:layout_constraintBottom_toTopOf="@id/tv_tittle"
+        app:tint="@color/ic_joystick" />
+
+
+    <ImageView
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="-200dp"
+        android:contentDescription="@string/imagen_usuario"
+        android:src="@drawable/ic_login_person"
+        app:layout_constraintBottom_toTopOf="@id/et_userName"
+        app:layout_constraintEnd_toStartOf="@+id/et_userName"
+        app:layout_constraintTop_toBottomOf="@id/et_userName" />
+
+    <ImageView
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:src="@drawable/ic_lock_login"
+        app:layout_constraintBottom_toTopOf="@id/et_password"
+        app:layout_constraintEnd_toStartOf="@id/et_password"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:hint="@string/contrase_a"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/tv_forgot_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_userName" />
+
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/olvid_su_contrase_a_ingrese_aqui"
+        android:layout_marginTop="15dp"
+        android:focusableInTouchMode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
+        app:layout_constraintBottom_toTopOf="@id/btn_logIn"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logIn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/btn_ingresar"
+        android:text="@string/ingresar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

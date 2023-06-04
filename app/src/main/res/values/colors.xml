@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="btn_ingresar">#607D8B</color>
+    <color name="home">#F5F5F5</color>
+    <color name="tv_welcome">#607D8B</color>
+    <color name="tv_msg_login">#757575</color>
+    <color name="ic_joystick">#7B1FA2</color>
+    <color name="ll_cards">#9575CD</color>
+    <color name="card_item">#D1C4E9</color>
+    <color name="ic_shop">#B5B3B3</color>
+</resources>

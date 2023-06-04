@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Games Break</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="inicie_sesi_n">Iniciar sesión</string>
+    <string name="bienvenido_a">Games Break</string>
+    <string name="imagen_usuario">Imagen usuario</string>
+    <string name="olvid_su_contrase_a_ingrese_aqui">¿Olvidó su contraseña? Ingrese aqui.</string>
+    <string name="foto_del_juego">foto del juego</string>
+    <string name="mis_juegos">Mis juegos</string>
+    <string name="compra">Compra</string>
+
+</resources>

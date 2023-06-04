@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="3.5dp"
+        android:layout_marginVertical="15dp"
+        tools:context=".activities.HomeActivity">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_myGames"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="15dp"
+            app:cardCornerRadius="9dp"
+            app:cardElevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/cl_container"
+            app:layout_constraintEnd_toStartOf="@id/cv_buyGames"
+            app:layout_constraintStart_toStartOf="@id/cl_container"
+            app:layout_constraintTop_toTopOf="@id/cl_container"
+            app:layout_constraintVertical_bias="0.30">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:rotation="-25"
+                android:src="@drawable/ic_joystick_new"
+                app:tint="@color/tv_msg_login" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/mis_juegos"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_buyGames"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="15dp"
+            app:cardCornerRadius="9dp"
+            app:cardElevation="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/cl_container"
+            app:layout_constraintEnd_toEndOf="@id/cl_container"
+            app:layout_constraintStart_toEndOf="@id/cv_myGames"
+            app:layout_constraintTop_toTopOf="@id/cl_container"
+            app:layout_constraintVertical_bias="0.25">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_shop"
+                app:tint="@color/ic_shop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/compra"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
