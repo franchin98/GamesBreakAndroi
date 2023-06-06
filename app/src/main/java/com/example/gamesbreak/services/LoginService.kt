@@ -15,15 +15,12 @@ object LoginService {
     fun validateLogin(userName: AppCompatEditText, password: AppCompatEditText) {
         when (val user = validateUser(userName.text.toString())) {
             is User -> validatePassword(user, password)
-            else -> if (userName.text.toString().isEmpty() || password.text.toString().isEmpty()
-            ) {
+            else -> if (userName.text.toString().isEmpty() || password.text.toString().isEmpty()) {
                 Toast.makeText(
-                    userName.context,
-                    "Verifique los datos ingresados.",
-                    Toast.LENGTH_LONG
+                    userName.context, "Verifique los datos ingresados.", Toast.LENGTH_LONG
                 ).show()
-            } else
-                Toast.makeText(userName.context, "¡El usuario no existe!", Toast.LENGTH_LONG).show()
+            } else Toast.makeText(userName.context, "¡El usuario no existe!", Toast.LENGTH_LONG)
+                .show()
         }
     }
 
@@ -33,6 +30,7 @@ object LoginService {
     private fun validatePassword(user: User, password: AppCompatEditText) {
         if (user.password == password.text.toString()) {
             val intent = Intent(password.context, HomeActivity::class.java)
+            intent.putExtra("ID_USUARIO", user.id)
             startActivity(password.context, intent, null)
         } else {
             Toast.makeText(password.context, "¡La contraseña es incorrecta!", Toast.LENGTH_LONG)

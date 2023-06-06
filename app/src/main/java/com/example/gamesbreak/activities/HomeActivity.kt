@@ -14,12 +14,23 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         showGamesToSale()
+        showGamesOfUser()
+    }
+
+    private fun showGamesOfUser() {
+        val userId = intent.extras?.getLong("ID_USUARIO")
+
+        binding.cvMyGames.setOnClickListener {
+            val intentMyGames = Intent(this, GameOfUserActivity::class.java)
+            intentMyGames.putExtra("ID_USUARIO", userId)
+            startActivity(intentMyGames)
+        }
     }
 
 
     private fun showGamesToSale() {
         binding.cvBuyGames.setOnClickListener {
-            val intentGameRecyclerActivity = Intent(this, GameReciclerActivity::class.java)
+            val intentGameRecyclerActivity = Intent(this, GameToSaleActivity::class.java)
             startActivity(intentGameRecyclerActivity)
         }
     }

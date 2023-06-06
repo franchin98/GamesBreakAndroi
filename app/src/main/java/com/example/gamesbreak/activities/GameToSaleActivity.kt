@@ -4,14 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gamesbreak.R
 import com.example.gamesbreak.adapter.GameAdapter
 import com.example.gamesbreak.data.Game
 import com.example.gamesbreak.databinding.ActivityGameReciclerBinding
-import com.example.gamesbreak.databinding.ActivityHomeBinding
 import com.example.gamesbreak.repositories.GameRepository
 
-class GameReciclerActivity : AppCompatActivity() {
+class GameToSaleActivity : AppCompatActivity() {
 
     private lateinit var bindingGame: ActivityGameReciclerBinding
 
@@ -19,10 +17,10 @@ class GameReciclerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingGame = ActivityGameReciclerBinding.inflate(layoutInflater)
         setContentView(bindingGame.root)
-        displayGames()
+        showGamesToSale()
     }
 
-    private fun displayGames() {
+    private fun showGamesToSale() {
         val selectGameOnClickListener = { game: Game ->
             Toast.makeText(
                 this,

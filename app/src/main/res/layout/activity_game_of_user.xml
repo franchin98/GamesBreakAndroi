@@ -4,22 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="15dp"
-    android:layout_marginVertical="10dp"
-    android:background="#FDECDCD3"
-    tools:context=".activities.GameToSaleActivity">
-
+    tools:context=".activities.GameOfUserActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reciclerViewGame"
+        android:id="@+id/recyclerViewGamesOfUser"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@ object PurchaseRepository: RepositoryInterface<Purchase> {
         TODO("Not yet implemented")
     }
 
-    override fun getAll(): List<Purchase>? {
+    override fun getAll(): List<Purchase> {
         return purchases
     }
 

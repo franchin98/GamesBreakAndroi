@@ -27,9 +27,9 @@ class GameAdapter(
 
         holder.binding.tvGameName.text = game.name
         holder.binding.tvPriceGame.text = buildString {
-        append("$")
-        append(game.price)
-    }
+            append("$")
+            append(game.price)
+        }
         Glide.with(holder.binding.ivItemGame).load(game.permalink).into(holder.binding.ivItemGame)
         holder.binding.cardsGame.setOnClickListener {
             setViewGameDescription(game)

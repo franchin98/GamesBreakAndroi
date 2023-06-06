@@ -3,7 +3,7 @@ package com.example.gamesbreak.intermediaries
 import java.time.DayOfWeek
 import java.time.LocalDate
 
-class NakamaIntermediary() : IntermediaryInterface {
+class NakamaIntermediary: IntermediaryInterface {
     private val FIRST_COMMISSION = 0.03
     private val SECOND_COMMISSION = 0.0075
     override fun processPurchase(price: Double): Double {

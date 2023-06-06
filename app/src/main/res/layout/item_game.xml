@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cards_game"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginVertical="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_itemGame"
@@ -20,34 +19,31 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="@string/foto_del_juego"
-            app:layout_constraintTop_toTopOf="@id/cl_itemGame"
             app:layout_constraintStart_toStartOf="@id/cl_itemGame"
-            />
+            app:layout_constraintTop_toTopOf="@id/cl_itemGame" />
 
         <TextView
             android:id="@+id/tv_gameName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Titulo aca"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:textColor="@color/tv_welcome"
-            app:layout_constraintTop_toTopOf="@id/iv_itemGame"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/cl_itemGame"
-            app:layout_constraintStart_toEndOf="@id/iv_itemGame"/>
+            app:layout_constraintStart_toEndOf="@id/iv_itemGame"
+            app:layout_constraintTop_toTopOf="@id/iv_itemGame" />
 
         <TextView
             android:id="@+id/tv_priceGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ Precio"
-            android:textStyle="bold"
-            android:textSize="23sp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="@id/cl_itemGame"
-            app:layout_constraintBottom_toBottomOf="@id/iv_itemGame"/>
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_itemGame"
+            app:layout_constraintEnd_toEndOf="@id/cl_itemGame" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
