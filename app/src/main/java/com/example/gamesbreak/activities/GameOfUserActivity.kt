@@ -30,7 +30,7 @@ class GameOfUserActivity : AppCompatActivity() {
 
         binding.recyclerViewGamesOfUser.adapter =
             GameOfUserAdapter(
-                UserGameService.getGamesOfUser(intent.extras!!.getLong("ID_USUARIO")),
+                UserGameService.getGamesOfUser(intent.extras!!.getLong("ID_USER")),
                 onClickGame
             )
         binding.recyclerViewGamesOfUser.layoutManager = LinearLayoutManager(this)

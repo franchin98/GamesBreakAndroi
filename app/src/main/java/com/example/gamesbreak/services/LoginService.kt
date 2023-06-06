@@ -30,7 +30,8 @@ object LoginService {
     private fun validatePassword(user: User, password: AppCompatEditText) {
         if (user.password == password.text.toString()) {
             val intent = Intent(password.context, HomeActivity::class.java)
-            intent.putExtra("ID_USUARIO", user.id)
+            intent.putExtra("ID_USER", user.id)
+            intent.putExtra("NAME_USER", user.name)
             startActivity(password.context, intent, null)
         } else {
             Toast.makeText(password.context, "¡La contraseña es incorrecta!", Toast.LENGTH_LONG)

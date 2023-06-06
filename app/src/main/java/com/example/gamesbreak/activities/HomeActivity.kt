@@ -9,20 +9,26 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val nameUser = intent.extras!!.getString("NAME_USER")
+        binding.tvGreetingUser.text = buildString {
+            append("¡Hola, ")
+            append("$nameUser!")
+        }
         showGamesToSale()
         showGamesOfUser()
     }
 
     private fun showGamesOfUser() {
-        val userId = intent.extras?.getLong("ID_USUARIO")
+        val userId = intent.extras?.getLong("ID_USER")
 
         binding.cvMyGames.setOnClickListener {
             val intentMyGames = Intent(this, GameOfUserActivity::class.java)
-            intentMyGames.putExtra("ID_USUARIO", userId)
+            intentMyGames.putExtra("ID_USER", userId)
             startActivity(intentMyGames)
         }
     }
