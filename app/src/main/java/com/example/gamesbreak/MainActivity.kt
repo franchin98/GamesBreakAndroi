@@ -9,6 +9,7 @@ import com.example.gamesbreak.activities.HomeActivity
 import com.example.gamesbreak.data.User
 import com.example.gamesbreak.databinding.ActivityMainBinding
 import com.example.gamesbreak.repositories.UserRepository
+import com.example.gamesbreak.services.LoginService
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,20 +23,15 @@ class MainActivity : AppCompatActivity() {
         val btnLogin: AppCompatButton = bindingMain.btnLogIn
 
         btnLogin.setOnClickListener {
-            validateLogin()
+            LoginService.validateLogin(
+                bindingMain.etUserName,
+                bindingMain.etPassword
+            )
         }
     }
 
     private fun validateLogin() {
-        when (val user = validateUser()) {
-            is User -> validatePassword(user)
-            else -> if (bindingMain.etUserName.text.toString().isEmpty() ||
-                bindingMain.etPassword.text.toString().isEmpty()
-            ) {
-                Toast.makeText(this, "Verifique los datos ingresados.", Toast.LENGTH_LONG).show()
-            } else
-                Toast.makeText(this, "¡El usuario no existe!", Toast.LENGTH_LONG).show()
-        }
+
     }
 
     private fun validatePassword(anUser: User) {
