@@ -11,5 +11,7 @@
     <string name="mis_juegos">Mis juegos</string>
     <string name="compra">Compra</string>
     <string name="mis_juegosGameOfUser">Mis juegos</string>
+    <string name="no_tienes_juegos_comprados">¡No tienes juegos comprados!</string>
+    <string name="ic_joystick_gamesofuser">ic_joystick gamesOfUser</string>
 
 </resources>
