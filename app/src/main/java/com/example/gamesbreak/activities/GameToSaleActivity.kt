@@ -1,8 +1,9 @@
 package com.example.gamesbreak.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamesbreak.adapter.GameAdapter
 import com.example.gamesbreak.data.Game
@@ -22,11 +23,9 @@ class GameToSaleActivity : AppCompatActivity() {
 
     private fun showGamesToSale() {
         val selectGameOnClickListener = { game: Game ->
-            Toast.makeText(
-                this,
-                "Nombre del juego: ${game.name}, Precio: ${game.price}",
-                Toast.LENGTH_LONG
-            ).show()
+            val intentPurchaseGame = Intent(this, PurchaseOfGameActivity::class.java)
+            intentPurchaseGame.putExtra("ID_GAME", game.id)
+            startActivity(intentPurchaseGame)
         }
 
         bindingGame.reciclerViewGame.adapter =

@@ -10,4 +10,8 @@
     <color name="ll_cards">#9575CD</color>
     <color name="card_item">#D1C4E9</color>
     <color name="ic_shop">#B5B3B3</color>
+    <color name="purchase_game_gradient1">#7C65A9</color>
+    <color name="purchase_game_gradient2">#96D4CA</color>
+    <color name="purchase_game_cardview">#ebf4f5</color>
+
 </resources>

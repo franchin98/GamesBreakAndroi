@@ -12,6 +12,7 @@ object UserRepository: RepositoryInterface<User> {
         users.add(User(2802L, "AHOZ", "lock_password", "Aylen", "Hoz", 200.50, "2021/01/11"))
         users.add(User(1510L, "Diegote", "@12345", "Diego", "Gonzales", 12.0, "2018/04/15"))
         users.add(User(1996, "Bmicaela96", "Azul1104", "Micaela" ,"Borquez", 200.50, "2023/06/02"))
+        users.add(User(1995, "romiSkurnik", "romigarca", "Romina" ,"Skurnik", 200.50, "2023/05/04"))
     }
 
     override fun getByID(id: String): User? {
