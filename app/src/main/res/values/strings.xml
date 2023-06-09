@@ -13,5 +13,11 @@
     <string name="mis_juegosGameOfUser">Mis juegos</string>
     <string name="no_tienes_juegos_comprados">¡No tienes juegos comprados!</string>
     <string name="ic_joystick_gamesofuser">ic_joystick gamesOfUser</string>
+    <string name="epic_games">Epic Games</string>
+    <string name="nakama">Nakama</string>
+    <string name="seleccione_un_intermediario">Seleccione un intermediario</string>
+    <string name="steam">Steam</string>
+    <string name="image_of_game">Image of game</string>
+    <string name="image_of_game_of_user">Image of game</string>
 
 </resources>

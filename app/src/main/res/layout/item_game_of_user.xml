@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_gameOfUser"
+    app:cardCornerRadius="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
@@ -20,7 +21,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="@id/cl_gameOfUserItem"
-            app:layout_constraintTop_toTopOf="@id/cl_gameOfUserItem" />
+            app:layout_constraintTop_toTopOf="@id/cl_gameOfUserItem"
+            android:contentDescription="@string/image_of_game_of_user" />
 
         <TextView
             android:id="@+id/tv_tittleGameOfUser"

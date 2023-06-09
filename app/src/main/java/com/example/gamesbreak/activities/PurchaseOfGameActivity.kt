@@ -14,12 +14,18 @@ class PurchaseOfGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPurchaseOfGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        showContent()
+    }
 
+    private fun showContent() {
         val game = GameRepository.getByID(intent.extras?.getLong("ID_GAME").toString())
-
         Glide.with(binding.ivSaleOfGame).load(game?.permalink).into(binding.ivSaleOfGame)
-
-
-
+        binding.tvTittleGameCardPurchase.text = game!!.name
+        binding.tvPriceGameCardPurchase.text = buildString {
+            append(" $${game.price}")
+        }
+        binding.tvReleaseDateCardPurchase.text = buildString {
+            append("Publicado el: ${game.releaseDate}")
+        }
     }
 }
