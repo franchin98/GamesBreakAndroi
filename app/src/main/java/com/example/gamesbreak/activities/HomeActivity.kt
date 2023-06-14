@@ -3,6 +3,8 @@ package com.example.gamesbreak.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gamesbreak.MainActivity
+import com.example.gamesbreak.R
 import com.example.gamesbreak.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -13,16 +15,20 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val nameUser = intent.extras!!.getString("NAME_USER")
-        binding.tvGreetingUser.text = buildString {
-            append("¡Hola, ")
-            append("$nameUser!")
-        }
-        showGamesToSale()
-        showGamesOfUser()
-    }
 
-    private fun showGamesOfUser() {
+        val nameUser = intent.extras?.getString("NAME_USER")
+
+        if (nameUser.isNullOrEmpty())
+            startActivity(Intent(this, MainActivity::class.java))
+        else {
+            binding.tvGreetingUser.text = buildString {
+                append(getString(R.string.greeting_home))
+                append(" $nameUser!")
+            }
+            setUpClickListeners()
+        }
+    }
+    private fun setUpClickListeners() {
         val userId = intent.extras?.getLong("ID_USER")
 
         binding.cvMyGames.setOnClickListener {
@@ -30,13 +36,11 @@ class HomeActivity : AppCompatActivity() {
             intentMyGames.putExtra("ID_USER", userId)
             startActivity(intentMyGames)
         }
-    }
 
-
-    private fun showGamesToSale() {
         binding.cvBuyGames.setOnClickListener {
             val intentGameRecyclerActivity = Intent(this, GameToSaleActivity::class.java)
             startActivity(intentGameRecyclerActivity)
         }
+
     }
 }

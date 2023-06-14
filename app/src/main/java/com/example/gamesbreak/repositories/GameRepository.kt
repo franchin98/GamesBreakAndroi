@@ -34,9 +34,7 @@ object GameRepository: RepositoryInterface<Game> {
         return null
     }
 
-    override fun getAll(): List<Game>? {
-        return games
-    }
+    override fun getAll(): List<Game> = games
 
     override fun removeItem(id: Long): Boolean {
         TODO("Not yet implemented")

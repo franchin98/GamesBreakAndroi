@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="15dp"
     android:layout_marginVertical="10dp"
-    android:background="#FDECDCD3"
     tools:context=".activities.GameToSaleActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reciclerViewGame"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

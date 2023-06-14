@@ -26,21 +26,22 @@ class GameOfUserActivity : AppCompatActivity() {
     }
 
     private fun showGamesOfUser() {
+        val gamesOfUser = UserGameService.getGamesOfUser(intent.extras!!.getLong("ID_USER"))
 
-        if (UserGameService.getGamesOfUser(intent.extras!!.getLong("ID_USER")).isEmpty()) {
+        if (gamesOfUser.isEmpty()) {
             binding.tvVisibilityGone.visibility = View.VISIBLE
             binding.tvVisibilityGone.text = getString(R.string.no_tienes_juegos_comprados)
         }
 
-
         val onClickGame = { game: Game ->
-            Toast.makeText(this, "Juego: ${game.name}, precio: ${game.price}", Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(
+                this,
+                "${getString(R.string.name_of_game_of_user)} ${game.name}, ${getString(R.string.price_game_of_user)} ${game.price}",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
-        binding.recyclerViewGamesOfUser.adapter = GameOfUserAdapter(
-            UserGameService.getGamesOfUser(intent.extras!!.getLong("ID_USER")), onClickGame
-        )
+        binding.recyclerViewGamesOfUser.adapter = GameOfUserAdapter(gamesOfUser, onClickGame)
         binding.recyclerViewGamesOfUser.layoutManager = LinearLayoutManager(this)
 
     }

@@ -59,13 +59,12 @@
         android:rotation="@integer/material_motion_duration_long_2"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_tittle"
-        app:layout_constraintTop_toBottomOf="@id/tv_tittle"
-        app:layout_constraintBottom_toTopOf="@id/tv_tittle"
-        app:tint="@color/ic_joystick" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tittle"
+        app:tint="@color/ic_joystick"
+        android:contentDescription="@string/imagen_de_joystick" />
 
 
     <ImageView
-
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="-200dp"
@@ -81,7 +80,8 @@
         android:src="@drawable/ic_lock_login"
         app:layout_constraintBottom_toTopOf="@id/et_password"
         app:layout_constraintEnd_toStartOf="@id/et_password"
-        app:layout_constraintTop_toBottomOf="@id/et_password" />
+        app:layout_constraintTop_toBottomOf="@id/et_password"
+        android:contentDescription="@string/imagen_de_candado" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_password"
