@@ -15,12 +15,14 @@ class GameOfUserAdapter(
     class GameOfUserViewHolder(val binding: ItemGameOfUserBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): GameOfUserViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameOfUserViewHolder {
         val binding =
-            ItemGameOfUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemGameOfUserBinding
+                .inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
 
         return GameOfUserViewHolder(binding)
     }

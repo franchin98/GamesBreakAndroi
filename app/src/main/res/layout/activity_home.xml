@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:paddingHorizontal="20dp"
-        android:textColor="@color/material_dynamic_neutral10"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/cl_container"

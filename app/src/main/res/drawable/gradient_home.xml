@@ -7,7 +7,7 @@
             <gradient
                 android:startColor="@color/purchase_game_gradient2"
                 android:endColor="@color/purchase_game_gradient1"
-                android:angle="320"
+                android:angle="225"
                 >
 
             </gradient>

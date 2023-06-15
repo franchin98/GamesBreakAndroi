@@ -29,7 +29,7 @@ class GameToSaleActivity : AppCompatActivity() {
         }
 
         bindingGame.reciclerViewGame.adapter =
-            GameAdapter(GameRepository.getAll()!!, selectGameOnClickListener)
+            GameAdapter(GameRepository.getAll(), selectGameOnClickListener)
         bindingGame.reciclerViewGame.layoutManager = LinearLayoutManager(this)
     }
 }
