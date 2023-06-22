@@ -39,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.cvBuyGames.setOnClickListener {
             val intentGameRecyclerActivity = Intent(this, GameToSaleActivity::class.java)
+            intentGameRecyclerActivity.putExtra("ID_USER", userId)
             startActivity(intentGameRecyclerActivity)
         }
 

@@ -27,4 +27,15 @@
     <string name="imagen_de_joystick">imagen de Joystick</string>
     <string name="imagen_de_carrito_de_compras">imagen de carrito de compras</string>
     <string name="imagen_de_candado">imagen de candado</string>
+    <string name="price_of_game_purchase">"Precio de juego: $"</string>
+    <string name="percentage_of_intermediary">"Recargo: "</string>
+    <string name="price_total_purchase">"Precio total: $"</string>
+    <string name="intermediary">"Intermediario: "</string>
+    <string name="calcular_total">Calcular total</string>
+    <string name="comprar">Comprar</string>
+    <string name="detalle_compra">Detalle de compra</string>
+    <string name="juegos_en_venta">Juegos en venta</string>
+    <string name="successful_purchase">¡Compra realizada con éxito!</string>
+    <string name="rejected_purchase">¡Compra rechazada por fondos insuficientes!</string>
+    <string name="user_has_the_game">¡Ya tienes este juego!</string>
 </resources>

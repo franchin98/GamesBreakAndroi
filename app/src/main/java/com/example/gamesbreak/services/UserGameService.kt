@@ -7,6 +7,7 @@ import com.example.gamesbreak.repositories.PurchaseRepository
 class UserGameService {
     companion object {
         private val purchases = PurchaseRepository.getAll()
+        private val gamesRepository = GameRepository
 
         fun getGamesOfUser(userId: Long): List<Game> {
             val listOfGames: MutableList<Game> = mutableListOf()
@@ -18,6 +19,13 @@ class UserGameService {
             }
 
             return listOfGames
+        }
+
+        fun userHasTheGame(userId: Long, gameId: Long): Boolean {
+            val gamesOfUser = getGamesOfUser(userId)
+            val game = gamesRepository.getByID(gameId.toString())
+
+            return gamesOfUser.contains(game)
         }
     }
 
