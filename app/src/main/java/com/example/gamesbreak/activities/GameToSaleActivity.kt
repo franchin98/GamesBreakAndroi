@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gamesbreak.MainActivity
 import com.example.gamesbreak.adapter.GameAdapter
 import com.example.gamesbreak.data.Game
 import com.example.gamesbreak.databinding.ActivityGameReciclerBinding
@@ -24,14 +23,8 @@ class GameToSaleActivity : AppCompatActivity() {
 
     private fun showGamesToSale() {
         val selectGameOnClickListener = { game: Game ->
-
-            if(intent.extras?.getLong("ID_USER").toString().isEmpty())
-                startActivity(Intent(this, MainActivity::class.java))
-
-
             val intentPurchaseGame = Intent(this, PurchaseOfGameActivity::class.java)
             intentPurchaseGame.putExtra("ID_GAME", game.id)
-            intentPurchaseGame.putExtra("ID_USER", intent.extras!!.getLong("ID_USER"))
             startActivity(intentPurchaseGame)
         }
 

@@ -1,6 +1,5 @@
 package com.example.gamesbreak.intermediaries
 
-import java.time.Clock
 import java.time.LocalTime
 
 class EpicGamesIntermediary() : IntermediaryInterface {
@@ -8,7 +7,7 @@ class EpicGamesIntermediary() : IntermediaryInterface {
     private val SECOND_COMMISSION = 0.03
 
     override fun processPurchase(price: Double): Double {
-        val currentTime: LocalTime = LocalTime.now(Clock.systemDefaultZone())
+        val currentTime: LocalTime = LocalTime.now()
 
         val (lowerLimitHours, lowerLimitMinutes) = Pair(20, 0)
         val lowerLimit = LocalTime.of(lowerLimitHours, lowerLimitMinutes)

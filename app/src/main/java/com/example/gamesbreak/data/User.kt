@@ -6,6 +6,6 @@ data class User(
     val password: String,
     val name: String,
     val surname: String,
-    var money: Double,
+    val money: Double,
     val createdDate: String
 )

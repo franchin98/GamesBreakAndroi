@@ -83,7 +83,7 @@
         android:id="@+id/tv_options_intermediary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="30dp"
         android:paddingHorizontal="15dp"
         android:text="@string/seleccione_un_intermediario"
         android:textColor="@color/black"
@@ -92,7 +92,7 @@
         app:layout_constraintBottom_toTopOf="@id/rg_intermediary_options"
         app:layout_constraintEnd_toEndOf="@id/cv_PurchaseGame"
         app:layout_constraintStart_toStartOf="@id/cv_PurchaseGame"
-        app:layout_constraintTop_toBottomOf="@id/cv_PurchaseGame" />
+        app:layout_constraintTop_toBottomOf="@id/cv_PurchaseGame"/>
 
 
     <RadioGroup
@@ -143,113 +143,6 @@
 
 
     </RadioGroup>
-
-    <Button
-        android:id="@+id/btn_calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:backgroundTint="@color/black"
-        android:text="@string/calcular_total"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rg_intermediary_options" />
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_priceTotalPurchase"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:cardCornerRadius="10dp"
-        android:visibility="gone"
-        android:layout_marginHorizontal="10dp"
-        app:cardElevation="7dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_calculate"
-        app:layout_constraintVertical_bias="0.25">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/title_purchase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:text="@string/detalle_compra"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:textAlignment="center"
-                android:paddingHorizontal="20dp"
-                android:fontFamily="sans-serif-condensed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/tv_priceOfGame"
-                />
-
-
-            <TextView
-                android:id="@+id/tv_priceOfGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title_purchase"
-                tools:text="Precio base:" />
-
-            <TextView
-                android:id="@+id/tv_percentage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_priceOfGame"
-                tools:text="Porcentaje: " />
-
-            <TextView
-                android:id="@+id/tv_priceTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_percentage"
-                tools:text="precio final: " />
-
-            <Button
-                android:id="@+id/btn_buyGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_percentage"
-                android:layout_marginEnd="20dp"
-                android:text="@string/comprar"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/black"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
