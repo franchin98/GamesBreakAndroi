@@ -30,7 +30,6 @@
     <string name="price_of_game_purchase">"Precio de juego: $"</string>
     <string name="percentage_of_intermediary">"Recargo: "</string>
     <string name="price_total_purchase">"Precio total: $"</string>
-    <string name="intermediary">"Intermediario: "</string>
     <string name="calcular_total">Calcular total</string>
     <string name="comprar">Comprar</string>
     <string name="detalle_compra">Detalle de compra</string>

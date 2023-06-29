@@ -94,6 +94,7 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                                     .makeText(btnBuyGame.context,
                                         getString(R.string.successful_purchase),
                                         Toast.LENGTH_SHORT).show()
+
                             } else {
                                 Toast
                                     .makeText(btnBuyGame.context,
