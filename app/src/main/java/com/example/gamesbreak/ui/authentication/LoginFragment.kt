@@ -12,6 +12,7 @@ import com.example.gamesbreak.activities.HomeActivity
 import com.example.gamesbreak.data.User
 import com.example.gamesbreak.databinding.FragmentLoginBinding
 import com.example.gamesbreak.services.LoginService
+import com.example.gamesbreak.utils.startNewActivity
 
 class LoginFragment : Fragment() {
 
@@ -39,10 +40,17 @@ class LoginFragment : Fragment() {
         )
 
         if (user is User) {
-            val intentHomeActivity = Intent(requireContext(), HomeActivity::class.java)
-            intentHomeActivity.putExtra("NAME_USER", user.name)
-            intentHomeActivity.putExtra("ID_USER", user.id)
-            startActivity(intentHomeActivity)
+//            val intentHomeActivity = Intent(requireContext(), HomeActivity::class.java)
+//            intentHomeActivity.putExtra("NAME_USER", user.name)
+//            intentHomeActivity.putExtra("ID_USER", user.id)
+
+            val params = arrayOf(
+                Pair("NAME_USER", user.name),
+                Pair("ID_USER", user.id.toString())
+                // Agrega más pares clave-valor según sea necesario
+            )
+
+            requireActivity().startNewActivity(HomeActivity::class.java, params)
         } else {
             Toast.makeText(requireContext(), getString(R.string.menssage_error_login), Toast.LENGTH_LONG).show()
         }
