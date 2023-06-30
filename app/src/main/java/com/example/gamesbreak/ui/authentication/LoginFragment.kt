@@ -40,14 +40,9 @@ class LoginFragment : Fragment() {
         )
 
         if (user is User) {
-//            val intentHomeActivity = Intent(requireContext(), HomeActivity::class.java)
-//            intentHomeActivity.putExtra("NAME_USER", user.name)
-//            intentHomeActivity.putExtra("ID_USER", user.id)
-
             val params = arrayOf(
                 Pair("NAME_USER", user.name),
                 Pair("ID_USER", user.id.toString())
-                // Agrega más pares clave-valor según sea necesario
             )
 
             requireActivity().startNewActivity(HomeActivity::class.java, params)
