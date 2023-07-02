@@ -95,6 +95,12 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                                         getString(R.string.successful_purchase),
                                         Toast.LENGTH_SHORT).show()
 
+                                Toast.makeText(btnBuyGame.context,
+                                                PurchaseService.applyCashback(userId, pricePurchase),
+                                                Toast.LENGTH_LONG).show()
+
+
+
                             } else {
                                 Toast
                                     .makeText(btnBuyGame.context,
