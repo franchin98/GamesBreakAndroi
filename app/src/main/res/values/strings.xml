@@ -38,6 +38,7 @@
     <string name="successful_purchase">¡Compra realizada con éxito!</string>
     <string name="rejected_purchase">¡Compra rechazada por fondos insuficientes!</string>
     <string name="user_has_the_game">¡Ya tienes este juego!</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_cashback_applies">¡No aplica cashback!</string>
+    <string name="cashback">"Cashback otorgado: "</string>
 </resources>
