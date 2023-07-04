@@ -8,6 +8,7 @@ import com.example.gamesbreak.repositories.PurchaseRepository
 import com.example.gamesbreak.repositories.UserRepository
 import java.time.LocalDate
 import java.time.Period
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 class PurchaseService {
@@ -28,7 +29,7 @@ class PurchaseService {
             userId: Long,
             gameId: Long,
             pricePurchase: Double,
-            datePurchase: LocalDate
+            datePurchase: LocalDate = LocalDate.now(ZoneId.of("America/Argentina/Buenos_Aires"))
         )
         : Boolean {
             val user = userRepository.getByIdNumeric(userId)

@@ -13,9 +13,6 @@ import com.example.gamesbreak.intermediaries.SteamIntermediary
 import com.example.gamesbreak.services.PurchaseService
 import com.example.gamesbreak.services.UserGameService
 import java.text.DecimalFormat
-import java.time.Clock
-import java.time.LocalDate
-
 
 class PurchaseOfGameActivity : AppCompatActivity() {
 
@@ -84,12 +81,11 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                     val userId = intent.extras!!.getLong("ID_USER")
                     val gameId = intent.extras!!.getLong("ID_GAME")
                     val pricePurchase = priceTotalFormat.format(priceTotal).toDouble()
-                    val datePurchase = LocalDate.now(Clock.systemDefaultZone())
 
                     when(UserGameService.userHasTheGame(userId, gameId)){
                         true -> Toast.makeText(btnBuyGame.context, getString(R.string.user_has_the_game), Toast.LENGTH_SHORT).show()
                         else -> {
-                            if (PurchaseService.recordPurchase(userId, gameId, pricePurchase, datePurchase)) {
+                            if (PurchaseService.recordPurchase(userId, gameId, pricePurchase)) {
                                 Toast
                                     .makeText(btnBuyGame.context,
                                         getString(R.string.successful_purchase),
