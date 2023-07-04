@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
     private fun setUpClickListeners() {
-        val userId = intent.extras?.getLong("ID_USER")
+        val userId = intent.extras?.getString("ID_USER")?.toLong()
 
         binding.cvMyGames.setOnClickListener {
             val intentMyGames = Intent(this, GameOfUserActivity::class.java)
