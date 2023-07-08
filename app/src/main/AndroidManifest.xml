@@ -15,6 +15,9 @@
         android:theme="@style/Theme.GamesBreak"
         tools:targetApi="31">
         <activity
+            android:name=".activities.PurchaseOfUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.authentication.AuthenticationActivity"
             android:exported="false" />
         <activity

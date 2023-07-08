@@ -12,6 +12,7 @@
         android:text="@string/mis_juegosGameOfUser"
         android:textStyle="bold"
         android:textSize="35sp"
+        android:fontFamily="sans-serif-condensed"
         android:background="@color/black"
         android:textColor="@color/white"
         android:layout_width="match_parent"
