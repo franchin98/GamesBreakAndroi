@@ -27,6 +27,8 @@ class LoginFragment : Fragment() {
         val btnLogin = binding.btnLogIn
 
         btnLogin.setOnClickListener {
+            val username = binding.etUserName.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
             runLogIn()
         }
 
