@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.gamesbreak.ui.ConversionHelper
 import com.example.gamesbreak.ui.authentication.LoginViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -19,14 +20,17 @@ class UserPreferences(context: Context){
     val userCredentials: Flow<UserCredentials?>
         get() = appContext.dataStore.data.map { preferences ->
             preferences[USER_CREDENTIALS]?.let { serializedUserCredentials ->
-                Json.decodeFromString<UserCredentials>(serializedUserCredentials)
+//                Json.decodeFromString<UserCredentials>(serializedUserCredentials)
+                ConversionHelper.fromJsonString(ConversionHelper.fromUrlString(serializedUserCredentials), UserCredentials::class.java)
             }
         }
 // TO-DO Fix USerCredentials Decoding
     suspend fun saveUserCredentials(userCredentials: UserCredentials) {
         print(userCredentials)
         appContext.dataStore.edit { preferences ->
-            preferences[USER_CREDENTIALS] = "Hole"//Json.encodeToString(userCredentials)
+            var jsonString = ConversionHelper.toJsonString(userCredentials)
+            var string = ConversionHelper.toUrlString(jsonString)
+            preferences[USER_CREDENTIALS] = string
         }
     }
     companion object {
