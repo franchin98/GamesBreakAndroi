@@ -32,6 +32,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/image_of_game"
                 android:src="@drawable/ic_joystick_new"
+                android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="@id/cl_card_purchase"
                 app:layout_constraintStart_toStartOf="@id/cl_card_purchase"
                 app:layout_constraintTop_toTopOf="@id/cl_card_purchase" />
