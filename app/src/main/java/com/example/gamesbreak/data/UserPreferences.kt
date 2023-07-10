@@ -20,7 +20,6 @@ class UserPreferences(context: Context){
     val userCredentials: Flow<UserCredentials?>
         get() = appContext.dataStore.data.map { preferences ->
             preferences[USER_CREDENTIALS]?.let { serializedUserCredentials ->
-//                Json.decodeFromString<UserCredentials>(serializedUserCredentials)
                 ConversionHelper.fromJsonString(ConversionHelper.fromUrlString(serializedUserCredentials), UserCredentials::class.java)
             }
         }
