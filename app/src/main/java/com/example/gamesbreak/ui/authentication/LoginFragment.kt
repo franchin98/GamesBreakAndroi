@@ -44,11 +44,7 @@ class LoginFragment : Fragment() {
             if (user != null) {
                 coroutineScope.launch {
                     viewModel.saveUserCredentials(user,storage)
-                    val params = arrayOf(
-                        Pair("NAME_USER", user.name),
-                        Pair("ID_USER", user.id.toString())
-                    )
-                    requireActivity().startNewActivity(HomeActivity::class.java, params)
+                    requireActivity().startNewActivity(HomeActivity::class.java)
                 }
             } else {
                 Toast.makeText(requireContext(), getString(R.string.menssage_error_login), Toast.LENGTH_LONG).show()

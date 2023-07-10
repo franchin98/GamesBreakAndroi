@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Store"
+        android:title="Tienda"
+        android:icon="@drawable/ic_joystick" />
+    <item
+        android:id="@+id/Profile"
+        android:title="Perfil"
+        android:icon="@drawable/ic_login_person" />
+
+</menu>
