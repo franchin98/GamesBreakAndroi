@@ -22,6 +22,7 @@
             android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="@id/cl_gameOfUserItem"
             app:layout_constraintTop_toTopOf="@id/cl_gameOfUserItem"
+            android:scaleType="fitXY"
             android:contentDescription="@string/image_of_game_of_user" />
 
         <TextView
