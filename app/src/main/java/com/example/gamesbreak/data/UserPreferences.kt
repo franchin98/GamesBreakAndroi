@@ -24,13 +24,17 @@ class UserPreferences(context: Context){
                 ConversionHelper.fromJsonString(ConversionHelper.fromUrlString(serializedUserCredentials), UserCredentials::class.java)
             }
         }
-// TO-DO Fix USerCredentials Decoding
     suspend fun saveUserCredentials(userCredentials: UserCredentials) {
         print(userCredentials)
         appContext.dataStore.edit { preferences ->
             var jsonString = ConversionHelper.toJsonString(userCredentials)
             var string = ConversionHelper.toUrlString(jsonString)
             preferences[USER_CREDENTIALS] = string
+        }
+    }
+    suspend fun clear() {
+        appContext.dataStore.edit { preferences ->
+            preferences.clear()
         }
     }
     companion object {
