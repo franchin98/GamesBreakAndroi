@@ -31,7 +31,7 @@ class UserPreferences(context: Context){
             preferences[USER_CREDENTIALS] = string
         }
     }
-    suspend fun clear() {
+     suspend fun clear() {
         appContext.dataStore.edit { preferences ->
             preferences.clear()
         }

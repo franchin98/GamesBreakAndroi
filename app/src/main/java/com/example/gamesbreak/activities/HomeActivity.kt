@@ -3,8 +3,12 @@ package com.example.gamesbreak.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import com.example.gamesbreak.MainActivity
 import com.example.gamesbreak.R
 import com.example.gamesbreak.data.UserCredentials
@@ -12,6 +16,7 @@ import com.example.gamesbreak.data.UserPreferences
 import com.example.gamesbreak.databinding.ActivityHomeBinding
 import com.example.gamesbreak.ui.authentication.AuthenticationActivity
 import com.example.gamesbreak.utils.startNewActivity
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -21,13 +26,15 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         val storage = UserPreferences(this)
 
         storage.userCredentials.asLiveData().observe(this, Observer { credentials ->
             user = credentials
             if (credentials != null) {
-                binding.tvGreetingUser.text = buildString {
+                binding.toolbar.title = buildString {
                     append(getString(R.string.greeting_home))
                     append(" ${user?.name}!")
                 }
@@ -36,6 +43,24 @@ class HomeActivity : AppCompatActivity() {
                 startNewActivity(AuthenticationActivity::class.java)
             }
         })
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_logout -> {
+                val storage = UserPreferences(this)
+                lifecycleScope.launch {
+                    storage.clear()
+                    startNewActivity(AuthenticationActivity::class.java)
+                }
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
     private fun setUpClickListeners() {
         val userId = this.user?.id

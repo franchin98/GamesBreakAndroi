@@ -10,24 +10,17 @@
     android:backgroundTint="@color/black"
     tools:context=".activities.HomeActivity">
 
-    <TextView
-        android:id="@+id/tv_greetingUser"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:paddingHorizontal="20dp"
-        android:textColor="@color/white"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:textSize="40sp"
-        android:textStyle="bold"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="@id/cl_container"
-        app:layout_constraintEnd_toEndOf="@id/cl_container"
-        app:layout_constraintStart_toStartOf="@id/cl_container"
+        app:titleTextColor="@color/white"
+        app:title="¡Hola, Franco!"
+        app:menu="@menu/toolbar_menu"
         app:layout_constraintTop_toTopOf="@id/cl_container"
-        app:layout_constraintVertical_bias="0"
-        tools:text="¡Hola, Franco!" />
+        app:layout_constraintStart_toStartOf="@id/cl_container"
+        app:layout_constraintEnd_toEndOf="@id/cl_container" />
 
 
     <androidx.cardview.widget.CardView
