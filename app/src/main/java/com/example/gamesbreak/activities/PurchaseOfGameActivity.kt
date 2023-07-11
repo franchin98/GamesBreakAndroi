@@ -61,7 +61,7 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                 tvPriceTotal.text = buildString {
                     append(
                         getString(R.string.price_total_purchase)
-                                + priceTotalFormat.format(priceTotal).toDouble()
+                                + priceTotalFormat.format(priceTotal)
                     )
                 }
 
@@ -69,9 +69,9 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                     append(
                         getString(R.string.percentage_of_intermediary)
                                 + percentageFormatted.format(
-                            percentage
+                            percentage.times(100)
                         )
-                            .toDouble().times(100) + "%"
+                             + "%"
                     )
                 }
 
@@ -80,7 +80,7 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                 btnBuyGame.setOnClickListener {
                     val userId = intent.extras!!.getLong("ID_USER")
                     val gameId = intent.extras!!.getLong("ID_GAME")
-                    val pricePurchase = priceTotalFormat.format(priceTotal).toDouble()
+                    val pricePurchase = priceTotalFormat.format(priceTotal)
 
                     when (UserGameService.userHasTheGame(userId, gameId)) {
                         true -> Toast.makeText(
@@ -90,17 +90,17 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                         ).show()
 
                         else -> {
-                            if (PurchaseService.recordPurchase(userId, gameId, pricePurchase)) {
-                                Toast
-                                    .makeText(
-                                        btnBuyGame.context,
-                                        getString(R.string.successful_purchase),
-                                        Toast.LENGTH_SHORT
+                            val price = pricePurchase.replace(',', '.', true)
+
+                            if (PurchaseService.recordPurchase(userId, gameId, price.toDouble())) {
+
+                                Toast.makeText( btnBuyGame.context, getString(R.string.successful_purchase),
+                                        Toast.LENGTH_LONG
                                     ).show()
 
                                 Toast.makeText(
                                     btnBuyGame.context,
-                                    PurchaseService.applyCashback(userId, pricePurchase),
+                                    PurchaseService.applyCashback(userId, price.toDouble()),
                                     Toast.LENGTH_LONG
                                 ).show()
 
