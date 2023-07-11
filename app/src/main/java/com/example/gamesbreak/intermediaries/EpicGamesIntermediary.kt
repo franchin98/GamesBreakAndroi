@@ -3,7 +3,7 @@ package com.example.gamesbreak.intermediaries
 import java.time.LocalTime
 import java.time.ZoneId
 
-class EpicGamesIntermediary() : IntermediaryInterface {
+class EpicGamesIntermediary : IntermediaryInterface {
     private val FIRST_COMMISSION = 0.01
     private val SECOND_COMMISSION = 0.03
 

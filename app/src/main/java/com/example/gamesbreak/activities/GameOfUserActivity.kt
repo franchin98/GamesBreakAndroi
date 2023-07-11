@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamesbreak.R
 import com.example.gamesbreak.adapter.GameOfUserAdapter
-import com.example.gamesbreak.data.Game
+import com.example.gamesbreak.data.GameBuy
 import com.example.gamesbreak.databinding.ActivityGameOfUserBinding
 import com.example.gamesbreak.services.UserGameService
 
@@ -33,10 +33,10 @@ class GameOfUserActivity : AppCompatActivity() {
             binding.tvVisibilityGone.text = getString(R.string.no_tienes_juegos_comprados)
         }
 
-        val onClickGame = { game: Game ->
+        val onClickGame = { game: GameBuy ->
             Toast.makeText(
                 this,
-                "${getString(R.string.name_of_game_of_user)} ${game.name}, ${getString(R.string.price_game_of_user)} ${game.price}",
+                "${getString(R.string.name_of_game_of_user)} ${game.titleGame}, ${getString(R.string.price_game_of_user)} ${game.amountPurchase}",
                 Toast.LENGTH_LONG
             ).show()
         }

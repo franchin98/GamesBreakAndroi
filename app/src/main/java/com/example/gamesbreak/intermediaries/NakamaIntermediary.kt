@@ -5,8 +5,8 @@ import java.time.LocalDate
 import java.time.ZoneId
 
 class NakamaIntermediary: IntermediaryInterface {
-    val FIRST_COMMISSION = 0.03
-    val SECOND_COMMISSION = 0.0075
+    private val FIRST_COMMISSION = 0.03
+    private val SECOND_COMMISSION = 0.0075
     override fun processPurchase(price: Double): Double {
         val currentDate: LocalDate = LocalDate.now(ZoneId.of("America/Argentina/Buenos_Aires"))
 

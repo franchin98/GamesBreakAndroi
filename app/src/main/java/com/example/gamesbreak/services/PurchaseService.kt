@@ -76,13 +76,6 @@ class PurchaseService {
 
             return "¡No aplica cashback!"
         }
-
-
-        fun getPurchasesOfUser(userId: Long): List<Purchase> {
-            return purchaseRepository.getAll().filter { it.userId == userId }
-        }
-
-
     }
 }
 

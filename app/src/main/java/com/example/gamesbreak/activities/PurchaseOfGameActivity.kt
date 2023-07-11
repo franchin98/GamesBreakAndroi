@@ -82,35 +82,41 @@ class PurchaseOfGameActivity : AppCompatActivity() {
                     val gameId = intent.extras!!.getLong("ID_GAME")
                     val pricePurchase = priceTotalFormat.format(priceTotal).toDouble()
 
-                    when(UserGameService.userHasTheGame(userId, gameId)){
-                        true -> Toast.makeText(btnBuyGame.context, getString(R.string.user_has_the_game), Toast.LENGTH_SHORT).show()
+                    when (UserGameService.userHasTheGame(userId, gameId)) {
+                        true -> Toast.makeText(
+                            btnBuyGame.context,
+                            getString(R.string.user_has_the_game),
+                            Toast.LENGTH_SHORT
+                        ).show()
+
                         else -> {
                             if (PurchaseService.recordPurchase(userId, gameId, pricePurchase)) {
                                 Toast
-                                    .makeText(btnBuyGame.context,
+                                    .makeText(
+                                        btnBuyGame.context,
                                         getString(R.string.successful_purchase),
-                                        Toast.LENGTH_SHORT).show()
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
-                                Toast.makeText(btnBuyGame.context,
-                                                PurchaseService.applyCashback(userId, pricePurchase),
-                                                Toast.LENGTH_LONG).show()
-
-
+                                Toast.makeText(
+                                    btnBuyGame.context,
+                                    PurchaseService.applyCashback(userId, pricePurchase),
+                                    Toast.LENGTH_LONG
+                                ).show()
 
                             } else {
                                 Toast
-                                    .makeText(btnBuyGame.context,
+                                    .makeText(
+                                        btnBuyGame.context,
                                         getString(R.string.rejected_purchase),
-                                        Toast.LENGTH_SHORT).show()
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                             }
                         }
                     }
-
-
                 }
             }
         }
-
     }
 
     private fun showContent() {

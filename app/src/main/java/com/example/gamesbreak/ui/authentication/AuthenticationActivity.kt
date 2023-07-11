@@ -2,7 +2,6 @@ package com.example.gamesbreak.ui.authentication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import com.example.gamesbreak.R
 
 class AuthenticationActivity : AppCompatActivity() {

@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         return binding.root
@@ -40,7 +40,7 @@ class LoginFragment : Fragment() {
         btnLogin.setOnClickListener {
             val username = binding.etUserName.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
-            var user = viewModel.login(username, password)
+            val user = viewModel.login(username, password)
             if (user != null) {
                 coroutineScope.launch {
                     viewModel.saveUserCredentials(user,storage)

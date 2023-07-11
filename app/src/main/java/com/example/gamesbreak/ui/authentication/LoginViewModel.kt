@@ -1,12 +1,10 @@
 package com.example.gamesbreak.ui.authentication
 
 import androidx.lifecycle.ViewModel
-import com.example.gamesbreak.activities.HomeActivity
 import com.example.gamesbreak.data.User
 import com.example.gamesbreak.data.UserCredentials
 import com.example.gamesbreak.data.UserPreferences
 import com.example.gamesbreak.services.LoginService
-import com.example.gamesbreak.utils.startNewActivity
 
 class LoginViewModel: ViewModel() {
     fun login(username: String, password: String): User? {

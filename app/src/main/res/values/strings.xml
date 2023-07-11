@@ -20,7 +20,7 @@
     <string name="steam">Steam</string>
     <string name="image_of_game">Image of game</string>
     <string name="image_of_game_of_user">Image of game</string>
-    <string name="greeting_home">¡Hola, </string>
+    <string name="greeting_home">¡Hola, %1$s!</string>
     <string name="price_game_of_user">Precio: $</string>
     <string name="name_of_game_of_user">Nombre del juego:</string>
     <string name="menssage_error_login">¡Usuario o clave incorrecta! Verifique los datos ingresados.</string>

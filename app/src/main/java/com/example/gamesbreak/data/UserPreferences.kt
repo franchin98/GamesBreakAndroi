@@ -7,12 +7,8 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.gamesbreak.ui.ConversionHelper
-import com.example.gamesbreak.ui.authentication.LoginViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 
 class UserPreferences(context: Context){
     private val appContext = context.applicationContext
@@ -26,8 +22,8 @@ class UserPreferences(context: Context){
     suspend fun saveUserCredentials(userCredentials: UserCredentials) {
         print(userCredentials)
         appContext.dataStore.edit { preferences ->
-            var jsonString = ConversionHelper.toJsonString(userCredentials)
-            var string = ConversionHelper.toUrlString(jsonString)
+            val jsonString = ConversionHelper.toJsonString(userCredentials)
+            val string = ConversionHelper.toUrlString(jsonString)
             preferences[USER_CREDENTIALS] = string
         }
     }

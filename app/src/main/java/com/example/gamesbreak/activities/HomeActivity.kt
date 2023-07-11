@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import com.example.gamesbreak.MainActivity
 import com.example.gamesbreak.R
 import com.example.gamesbreak.data.UserCredentials
 import com.example.gamesbreak.data.UserPreferences
@@ -31,18 +29,15 @@ class HomeActivity : AppCompatActivity() {
 
         val storage = UserPreferences(this)
 
-        storage.userCredentials.asLiveData().observe(this, Observer { credentials ->
+        storage.userCredentials.asLiveData().observe(this) { credentials ->
             user = credentials
             if (credentials != null) {
-                binding.toolbar.title = buildString {
-                    append(getString(R.string.greeting_home))
-                    append(" ${user?.name}!")
-                }
+                binding.toolbar.title = String.format(getString(R.string.greeting_home), user?.name)
                 setUpClickListeners()
             } else {
                 startNewActivity(AuthenticationActivity::class.java)
             }
-        })
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
@@ -50,17 +45,19 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+        return when (item.itemId) {
             R.id.menu_logout -> {
                 val storage = UserPreferences(this)
                 lifecycleScope.launch {
                     storage.clear()
                     startNewActivity(AuthenticationActivity::class.java)
                 }
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+
+            else -> super.onOptionsItemSelected(item)
         }
+
     }
     private fun setUpClickListeners() {
         val userId = this.user?.id
