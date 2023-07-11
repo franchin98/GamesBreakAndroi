@@ -32,7 +32,7 @@ class HomeActivity : AppCompatActivity() {
         storage.userCredentials.asLiveData().observe(this) { credentials ->
             user = credentials
             if (credentials != null) {
-                binding.toolbar.title = String.format(getString(R.string.greeting_home), user?.name)
+                binding.tvGreetingHome.text = String.format(getString(R.string.greeting_home), user?.name)
                 setUpClickListeners()
             } else {
                 startNewActivity(AuthenticationActivity::class.java)

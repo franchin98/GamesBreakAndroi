@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/tv_welcome"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/cl_itemGame"
             app:layout_constraintStart_toEndOf="@id/iv_itemGame"

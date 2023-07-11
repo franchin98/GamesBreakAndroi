@@ -15,12 +15,23 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/black"
-        app:titleTextColor="@color/white"
-        app:title="¡Hola, Franco!"
-        app:menu="@menu/toolbar_menu"
-        app:layout_constraintTop_toTopOf="@id/cl_container"
+        app:layout_constraintEnd_toEndOf="@id/cl_container"
         app:layout_constraintStart_toStartOf="@id/cl_container"
-        app:layout_constraintEnd_toEndOf="@id/cl_container" />
+        app:layout_constraintTop_toTopOf="@id/cl_container"
+        app:menu="@menu/toolbar_menu"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <TextView
+            android:id="@+id/tv_greeting_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:text="Hola, Franco!" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
 
     <androidx.cardview.widget.CardView

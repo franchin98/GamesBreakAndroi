@@ -44,7 +44,7 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="sans-serif-condensed"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/cl_card_purchase"
                 app:layout_constraintStart_toEndOf="@id/iv_saleOfGame"

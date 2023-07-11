@@ -30,6 +30,7 @@
         android:src="@drawable/ic_joystick_new"
         android:rotation="20"
         app:tint="@color/white"
+        android:layout_marginBottom="6dp"
         app:layout_constraintStart_toStartOf="@id/tv_tittle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

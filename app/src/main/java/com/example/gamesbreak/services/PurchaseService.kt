@@ -6,6 +6,7 @@ import com.example.gamesbreak.intermediaries.IntermediaryInterface
 import com.example.gamesbreak.repositories.GameRepository
 import com.example.gamesbreak.repositories.PurchaseRepository
 import com.example.gamesbreak.repositories.UserRepository
+import java.text.DecimalFormat
 import java.time.LocalDate
 import java.time.Period
 import java.time.ZoneId
@@ -31,14 +32,15 @@ class PurchaseService {
             pricePurchase: Double,
             datePurchase: LocalDate = LocalDate.now(ZoneId.of("America/Argentina/Buenos_Aires"))
         )
-        : Boolean {
+                : Boolean {
             val user = userRepository.getByIdNumeric(userId)
             val dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 
-            if(user!!.money >= pricePurchase) {
+            if (user!!.money >= pricePurchase) {
                 val datePurchaseStr = dateTimeFormatter.format(datePurchase)
                 val idPurchase = purchaseRepository.getAll().size.plus(1).toLong()
-                val newPurchase = Purchase(idPurchase, userId, gameId, pricePurchase, datePurchaseStr)
+                val newPurchase =
+                    Purchase(idPurchase, userId, gameId, pricePurchase, datePurchaseStr)
                 purchaseRepository.addItem(newPurchase)
                 user.money = user.money.minus(pricePurchase)
                 return true
@@ -58,20 +60,26 @@ class PurchaseService {
 
             val dateDiff = Period.between(LocalDate.parse(createdDateUser), LocalDate.now())
             val cashback: Double
-            when(dateDiff.months) {
-                in 0..THREE_MONTHS -> {  val FIVE_PERCENT = 0.05
-                                    cashback = pricePurchase.times(FIVE_PERCENT)
-                                    user.money = user.money.plus(cashback)
-                                    return "Cashback otorgado: $$cashback"
-                                    }
+            val cashBackFormat = DecimalFormat("#.##")
 
-                in 4.. TWELVE_MONTHS -> { val THREE_PERCENT = 0.03
-                                     cashback = pricePurchase.times(THREE_PERCENT)
+            if (dateDiff.years == 0) {
+                when (dateDiff.months) {
+                    in 0..THREE_MONTHS -> {
+                        val FIVE_PERCENT = 0.05
+                        cashback = pricePurchase.times(FIVE_PERCENT)
+                        user.money = user.money.plus(cashback)
 
-                                      user.money = user.money.plus(cashback)
-                                      return "Cashback otorgado: $$cashback"
-                                     }
+                        return "Cashback otorgado: $${cashBackFormat.format(cashback)}"
+                    }
 
+                    in 4..TWELVE_MONTHS -> {
+                        val THREE_PERCENT = 0.03
+                        cashback = pricePurchase.times(THREE_PERCENT)
+
+                        user.money = user.money.plus(cashback)
+                        return "Cashback otorgado: $${cashBackFormat.format(cashback)}"
+                    }
+                }
             }
 
             return "¡No aplica cashback!"

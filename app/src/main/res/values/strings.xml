@@ -24,7 +24,7 @@
     <string name="price_game_of_user">Precio: $</string>
     <string name="name_of_game_of_user">Nombre del juego:</string>
     <string name="menssage_error_login">¡Usuario o clave incorrecta! Verifique los datos ingresados.</string>
-    <string name="msg_release_in">"Publicado el: "</string>
+    <string name="msg_release_in">"Año de lanzamiento:"</string>
     <string name="imagen_de_joystick">imagen de Joystick</string>
     <string name="imagen_de_carrito_de_compras">imagen de carrito de compras</string>
     <string name="imagen_de_candado">imagen de candado</string>
@@ -44,4 +44,5 @@
     <string name="mis_compras">Mis compras</string>
     <string name="imagen_de_bolso_de_compras">Imagen de bolso de compras</string>
     <string name="mis_compras_realizadas">Mis compras</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 </resources>
