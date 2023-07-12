@@ -34,7 +34,7 @@
     <string name="calcular_total">Calcular total</string>
     <string name="comprar">Comprar</string>
     <string name="detalle_compra">Detalle de compra</string>
-    <string name="juegos_en_venta">Juegos en venta</string>
+    <string name="juegos_en_venta">Tienda</string>
     <string name="successful_purchase">¡Compra realizada con éxito!</string>
     <string name="rejected_purchase">¡Compra rechazada por fondos insuficientes!</string>
     <string name="user_has_the_game">¡Ya tienes este juego!</string>

@@ -27,16 +27,14 @@
         android:id="@+id/iv_joystick"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_joystick_new"
+        android:contentDescription="@string/ic_joystick_gamesofuser"
         android:rotation="20"
-        app:tint="@color/white"
-        android:layout_marginBottom="6dp"
-        app:layout_constraintStart_toStartOf="@id/tv_tittle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="30dp"
-        app:layout_constraintBottom_toTopOf="@id/recyclerViewGamesOfUser"
-        android:contentDescription="@string/ic_joystick_gamesofuser" />
+        android:src="@drawable/ic_joystick_new"
+        app:layout_constraintTop_toTopOf="@id/layout_gamesOfUser"
+        app:layout_constraintEnd_toEndOf="@id/layout_gamesOfUser"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/tv_visibility_gone"
